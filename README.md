@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# tRPC Next JS Example 1
 
-## Getting Started
-
-First, run the development server:
+## Code History
 
 ```bash
-npm run dev
-# or
-yarn dev
+# create app
+yarn create next-app next-trpc-ex-1 --typescript
+cd next-trpc-ex-1
+mkdir src
+mv pages src
+mv styles src
+mv public src
+# swc next issue solved https://stackoverflow.com/questions/72133316/ubuntu-22-04-libssl-so-1-1-cannot-open-shared-object-file-no-such-file-or-di
+wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1l-1ubuntu1.6_amd64.deb
+sudo dpkg -i libssl1.1_1.1.1l-1ubuntu1.6_amd64.deb
+# add tailwind css https://tailwindcss.com/docs/guides/nextjs
+yarn add -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+# add trpc support https://trpc.io/docs/nextjs
+yarn add @trpc/client @trpc/server @trpc/react @trpc/next zod react-query
+# add other development libraries
+yarn add superjson jotai @prisma/client react-hook-form jsonwebtoken cookie nodemailer
+# prisma setup after --
+npx prisma init
+npx prisma migrate dev --name
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
