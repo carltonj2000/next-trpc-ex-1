@@ -46,6 +46,8 @@ npx prisma migrate dev --name login_token
 docker exec -it trpc-postgres psql -U postgres
 # mailer
 yarn add nodemailer
+# post
+npx prisma migrate dev --name add-post
 ```
 
 The following are psql commands.

@@ -10,7 +10,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="flex justify-center items-center h-full">
-      <Link href="/post/new">Create Post</Link>
+      <Link href="/posts/new">Create Post</Link>
     </div>
   );
 };
